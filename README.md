@@ -8,6 +8,7 @@ Create a react app that lets you search for YouTube videos using the YouTube API
 - Collaborate with at least one other person to build this app by using `git` and Github
 - Use `create-react-app` 
 - Use this guide to make sure you are making the most of [Working in Groups](./Working_In_Groups.md)
+- Use [this Trello Board Template](https://trello.com/b/tTFpk77m/fsw-personal-site-project) for your project (make a copy and customize) - Be sure that everyone on your team has access. 
 
 ## UI
 
@@ -73,6 +74,7 @@ You must implement all of the user stories and acceptance criteria below. After 
 
 
 ### Stretch Features
+- In Chrome Dev Tools - use the lighthouse tab and run it to see how well your app does with accessibility. Use the tool to go through your code and improve accessibility. This will involve things like properly setting up your forms, making sure there is enough color contrast between text and background and more
 
 - Add more inputs to change the search criteria
     - Max number of results (numeric input use HTML5 input to control for min, max and integers
@@ -94,9 +96,31 @@ You must implement all of the user stories and acceptance criteria below. After 
 
 Figure out how to use Firebase to store comments instead of local storage
 
-## Considerations
 
 ## Setting up the API Key
+
+In the root of your project (Same level as `package.json)
+
+- `touch .env`
+
+In the `.gitignore` file add a new line and add `.env` - we do not want this file to be uploaded to github. We want to keep our API key a secret. **[OR ELSE BAD THINGS CAN HAPPEN](https://www.theregister.com/2015/01/06/dev_blunder_shows_github_crawling_with_keyslurping_bots/)**
+
+The `.env` file is **NOT** JavaScript. Do not use spaces, quotes or semicolons
+
+The following is an example (this is not an authentic key, you will need to generate your own (see below))
+
+```
+REACT_APP_API_KEY=AIzaSyBLR3ihehfi3OXK-UYtucQQBkpnzaaL
+```
+
+
+When you need to use your api key you will do something like this
+
+```js
+axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_API_KEY }`)
+```
+
+
 
 [Setting up up the YouTubeAPI](./Youtube_API_Key.md)
 
@@ -105,3 +129,6 @@ While this will get your API set up and introduce you to the YouTube documentati
 ## Deploy
 
 Deploy your app following [these instructions](./Deploying_a_React_App_Frontend_to_Netlify.md)
+
+
+Original Creator: Alejo Franco
