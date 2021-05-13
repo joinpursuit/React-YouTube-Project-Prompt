@@ -3,7 +3,6 @@
 Create a react app that lets you search for YouTube videos using the YouTube API, then choose a video from a list to watch.
 
 
-
 ## Overview
 
 - Collaborate with at least one other person to build this app by using `git` and Github
@@ -96,6 +95,12 @@ You must implement all of the user stories and acceptance criteria below. After 
 Figure out how to use Firebase to store comments instead of local storage
 
 ## Considerations
+
+## Setting up the API Key
+
+[Setting up up the YouTubeAPI](./Youtube_API_Key.md)
+
+While this will get your API set up and introduce you to the YouTube documentation, it will be your job to read and research the documentation in order to make the right API calls for this project. 
 
 ## Deploy
 
