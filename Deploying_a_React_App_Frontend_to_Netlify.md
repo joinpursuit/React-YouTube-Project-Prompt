@@ -49,6 +49,13 @@ Congrats! Your site should now be deployed.
 * To deploy though the Netlify Website follow [this tutorial](https://dev.to/easybuoy/deploying-react-app-from-github-to-netlify-3a9j)
 
 
+
+### Don't forget to add your API Key
+
+Using the Netlify website, go to the `Build and deploy` tab. Under the Environment section select `edit variables` - make sure that the name of your environment variables matches exactly what you have in your app. In the previous instructions, we said to name it `REACT_APP_API_KEY`. Then add your key from the Chrome Developer Console for the YouTube app as the value. 
+
+Be sure to start your environmental values with `REACT_APP_`. [See create-react-app documentation for more details](https://create-react-app.dev/docs/adding-custom-environment-variables/#adding-development-environment-variables-in-env)
+
 <hr />
 
 [Original Creator: Corey Ladovsky](https://github.com/joinpursuit/Pursuit-Core-Web/blob/master/react/react_deployment/README.md)
