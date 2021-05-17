@@ -58,4 +58,20 @@ Be sure to start your environmental values with `REACT_APP_`. [See create-react-
 
 <hr />
 
+
+### Set Up Redirects, So that Links to Specific Views like About or an Individual Video work
+
+In your `create-react-app`, go to the `public` folder
+- create a file called  `_redirects`  (exact, no extensions)
+- add
+
+```
+/* /index.html 200
+```
+
+Be sure to add, commit, push and test it.
+
+
+<hr />
+
 [Original Creator: Corey Ladovsky](https://github.com/joinpursuit/Pursuit-Core-Web/blob/master/react/react_deployment/README.md)
