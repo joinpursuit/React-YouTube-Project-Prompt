@@ -24,6 +24,8 @@ const About = () => {
             <h1>Jessica</h1>
             <p>
 
+            I am a software engineer and biomedical researcher with a background in neurotechnology. I aspire to apply my interest in technologies like AI and VR to improve patient experience and increase accessibility in healthcare.
+
             </p>
 
 
