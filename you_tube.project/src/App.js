@@ -1,6 +1,7 @@
-import Channel from "./Channel"
+import HomeBased from "./Channel/HomeBased.js"
 import {Route, Link} from 'react-router-dom'
-import './App.css';
+import React from 'react'
+import './App.css'
 
 function App() {
   return (
@@ -10,10 +11,14 @@ function App() {
         <h1>
           Welcome to my Channel.
         </h1>
-        <Link to="/">VISIT</Link>
-        
+        <nav>
+          <Link to="/">Visit me</Link>
+        </nav>
+        <div>
+          <Route path="/" component={HomeBased}/>
+        </div>
       </header>
-      <Route path='/' component={Channel}/>
+      
     </div>
   );
 }
