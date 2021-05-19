@@ -1,22 +1,13 @@
 import React from 'react'
-import{Route, Link} from "react-router-dom"
-import About from './About.js'
-import Home from './Home.js'
+import "./Homabesd.css"
 
 export default function HomeBased() {
     return (
-        <div>
-            <header>
-                <Link to='/home'>Home</Link>
-                <Link to='/about'>About</Link>
-            </header>
-            
-            <div>
-                
-                    <Route path="/home" component={Home}/>
-                    <Route path="/about" component={About}/>
-                
-            </div>
+        <div className= "main">
+            <img src='http://cdn.onlinewebfonts.com/svg/img_24879.png' className="App-logo" alt="logo" />
+            <h1>
+               Welcome to my Channel.
+            </h1> 
         </div>
     )
 }
