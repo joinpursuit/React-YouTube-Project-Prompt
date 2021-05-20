@@ -1,21 +1,29 @@
 import logo from './logo.svg';
 import './App.css';
-import NavBar from './components/NavBar'
 import { Switch, Route } from 'react-router-dom'
+import HomeBased from "./Channel/HomeBased.js"
 
+import {Link} from 'react-router-dom'
+import React from 'react'
+import './App.css'
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-         <main>
-           <Switch>
-             <Route exact path ="/"><h1>Youtube: Pick a video!</h1></Route>
-           </Switch>
-                
-         </main>
-                
-    </div>
+      
+      <header className="App-header">
+        <img src='http://cdn.onlinewebfonts.com/svg/img_24879.png' className="App-logo" alt="logo" />
+        <h1>
+          Welcome to my Channel.
+        </h1>
+        <nav>
+          <Link to="/">Visit me</Link>
+        </nav>
+        <div>
+          <Route path="/" component={HomeBased}/>
+        </div>
+      </header>
+          </div>
   );
 }
 
