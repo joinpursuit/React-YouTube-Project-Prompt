@@ -13,9 +13,7 @@ function App() {
       
       <header className="App-header">
         <img src='http://cdn.onlinewebfonts.com/svg/img_24879.png' className="App-logo" alt="logo" />
-        <h1>
-          Welcome to my Channel.
-        </h1>
+       
         <nav>
           <Link to="/">Visit me</Link>
         </nav>
