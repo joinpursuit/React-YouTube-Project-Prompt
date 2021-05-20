@@ -36,21 +36,24 @@ export default class Home extends Component {
             isError: false
         })
 
-        }catch(e){
-            this.setState({
-                videos: {},
-                searchvideo: "",
-                isError: true
-            })
-        }
+    //     }catch(e){
+    //         this.setState({
+    //             videos: {},
+    //             searchvideo: "",
+    //             isError: true
+    //         })
+    //     }
         
     }
-    
+
     render() {
         const {searchvideo,videos} = this.state
         // const disvideos = videos.map((ved )=> <div key={ved.id} >{ved.videoId}</div>)
         return (
             <div>
+                 <h1>
+                    Welcome to my Channel.
+                </h1>
                 <div className="input">
                     <form onSubmit={this.handleSubmit}>
                       <input 

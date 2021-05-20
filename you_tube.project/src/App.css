@@ -20,7 +20,7 @@
 .App-header {
   background-color: #282c34;
   color: white;
-  height: 800px;
+  height: auto;
 }
 
 .links{
@@ -45,4 +45,10 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.collaborators {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
