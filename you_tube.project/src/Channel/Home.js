@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import axios from 'axios'
 
 export default class Home extends Component {
     constructor(){
@@ -15,12 +15,13 @@ export default class Home extends Component {
        this.setState({
            searchvideo: e.target.value
        })
+
     }
     handleApi= async(e)=>{
         e.preventDefault()
         const {searchvideo} = this.state
         try{
-            const {data} = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyDi-oQkFDT7KXTOjGxOtYcl9C45EEHLUjk&type=video&part=snippet&maxResults=20&q=music/${e.target.value}`)
+            const {data} = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyDi-oQkFDT7KXTOjGxOtYcl9C45EEHLUjk&type=video&part=snippet&maxResults=50&q=music${e.target.value}`)
         console.log(data)
         const currentvideos=data.find((mov)=> mov.items.id === searchvideo)
         if(currentvideos !== searchvideo){

@@ -1,12 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
-import { Switch, Route } from 'react-router-dom'
+import {Route, Link } from 'react-router-dom'
 import HomeBased from "./Channel/HomeBased.js"
-
-import {Link} from 'react-router-dom'
 import React from 'react'
 import './App.css'
-import Youtube from 'react-youtube'
+
 
 function App() {
   return (
