@@ -21,7 +21,7 @@ export default class Home extends Component {
         e.preventDefault()
         const {searchvideo} = this.state
         try{
-            const {data} = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyDi-oQkFDT7KXTOjGxOtYcl9C45EEHLUjk&type=video&part=snippet&maxResults=20&q=music${e.target.value}`)
+            const {data} = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyDi-oQkFDT7KXTOjGxOtYcl9C45EEHLUjk&type=video&part=snippet&maxResults=20&q=music/${e.target.value}`)
         console.log(data)
         const currentvideos=data.find((mov)=> mov.items.id === searchvideo)
         if(currentvideos !== searchvideo){
