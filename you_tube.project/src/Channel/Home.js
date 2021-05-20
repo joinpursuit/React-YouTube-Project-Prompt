@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 
+
 export default class Home extends Component {
     constructor(){
         super()
@@ -10,14 +11,20 @@ export default class Home extends Component {
             isError: false
         }
     }
+    handleSubmit = (e)=>{
+        console.log('estoyaqui')
+       this.setState({
+           searchvideo: e.target.value
+       })
+    }
     handleApi= async(e)=>{
         e.preventDefault()
         const {searchvideo} = this.state
         try{
             const {data} = await axios.get(`https://www.googleapis.com/youtube/v3/search?key=AIzaSyDi-oQkFDT7KXTOjGxOtYcl9C45EEHLUjk&type=video&part=snippet&maxResults=20&q=music${e.target.value}`)
         console.log(data)
-        const currentvideos=data.find((mov)=> mov.items === searchvideo)
-        if(currentvideos !== searchvideo ){
+        const currentvideos=data.find((mov)=> mov.items.id === searchvideo)
+        if(currentvideos !== searchvideo){
             this.setState({
                 videos: {},
                 searchvideo: "",
@@ -38,15 +45,10 @@ export default class Home extends Component {
         }
         
     }
-    handleSubmit = (e)=>{
-        console.log('estoyaqui')
-       this.setState({
-           searchvideo: e.target.value
-       })
-    }
+    
     render() {
         const {searchvideo,videos} = this.state
-        const currentvideos = videos.map((ved)=> ved.snippet)
+        // const disvideos = videos.map((ved )=> <div key={ved.id} >{ved.videoId}</div>)
         return (
             <div>
                 <div className="input">
@@ -60,7 +62,7 @@ export default class Home extends Component {
                       <button>Search</button>
                     </form>
                     
-                    {currentvideos}
+                    {videos.videosId}
                 </div>
             </div>
         )
