@@ -6,14 +6,6 @@ function home() {
   return (
     <div className="homepage">
       <Youtube />
-
-      <input type="text" placeholder="Search..." />
-      <button className="searchbutton" type="submit">
-        Search
-      </button>
-      <div className="noresultbox">
-        <p>Please Submit a Search Above</p>
-      </div>
     </div>
   );
 }
