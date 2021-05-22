@@ -1,13 +1,13 @@
 import React from "react";
-import "./home.css";
-import Youtube from "./youtube";
+import "./Home.css";
+import YouTube from "./YouTube";
 
-function home() {
+function Home() {
   return (
     <div className="homepage">
-      <Youtube />
+      <YouTube />
     </div>
   );
 }
 
-export default home;
+export default Home;
