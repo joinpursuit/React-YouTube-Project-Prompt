@@ -9,7 +9,7 @@ const Youtube = () => {
       const res = await axios.get(
         `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${input}&key=${process.env.REACT_APP_API_KEY}`
       );
-      debugger
+      // debugger
       setVidList(res.data.items);
     } catch (error) {
       setVidList([]);
@@ -38,9 +38,10 @@ const Youtube = () => {
         {vidList.map((vid) => {
           return (
             <section>
+               <p>{vid.snippet.title}</p>
               <a href={`https://www.youtube.com/watch?v=${vid.id.videoId}`} target="_blank">
-            <p>{vid.snippet.title}</p> </a>
             <img src={vid.snippet.thumbnails.default.url} />
+            </a>
             </section>
           )
         })}
