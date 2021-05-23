@@ -1,6 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
+
 import "./YouTube.css";
+
+
+
 const YouTube = () => {
   const [vidList, setVidList] = useState([]);
   const [input, setInput] = useState("");
@@ -8,7 +12,10 @@ const YouTube = () => {
 
   const fetchVideos = async () => {
     try {
+
       const res = await axios.get(`https://youtube.googleapis.com/youtube/v3/search?maxResults=9&part=snippet&q=${input}&key=${process.env.REACT_APP_API_KEY}`);
+
+      
       setVidList(res.data.items);
       debugger;
     } catch (error) {
@@ -38,6 +45,7 @@ const YouTube = () => {
       <button onClick={handleClick} className="searchbutton" type="submit">
         Search
       </button>
+
       <div className="noresultbox">{text}</div>
       <div className="VideoContainer">
         {vidList.map((vid) => {
@@ -47,6 +55,7 @@ const YouTube = () => {
                 <img src={vid.snippet.thumbnails.high.url} alt={vid.snippet.description} />
               </a>
               <p>{vid.snippet.title}</p>
+
             </section>
           );
         })}

@@ -12,6 +12,9 @@ input {
 .noresultbox {
   display: flex;
   justify-content: center;
+
   width: auto;
+
+
   background-color: rgb(194, 194, 194);
 }
