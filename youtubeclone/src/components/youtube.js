@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
-const Youtube = () => {
+
+const YouTube = () => {
   const [vidList, setVidList] = useState([]);
   const [input, setInput] = useState("");
 
@@ -21,14 +22,18 @@ const Youtube = () => {
   };
 
   const handleClick = () => {
-    // debugger;
     fetchVideos();
     setInput("");
   };
 
   return (
     <section>
-      <input onChange={handleChange} value={input} type="text" placeholder="Search..." />
+      <input
+        onChange={handleChange}
+        value={input}
+        type="text"
+        placeholder="Search..."
+      />
 
       <button onClick={handleClick} className="searchbutton" type="submit">
         Search
@@ -38,15 +43,19 @@ const Youtube = () => {
         {vidList.map((vid) => {
           return (
             <section>
-              <a href={`https://www.youtube.com/watch?v=${vid.id.videoId}`} target="_blank">
-            <p>{vid.snippet.title}</p> </a>
-            <img src={vid.snippet.thumbnails.default.url} />
+              <p>{vid.snippet.title}</p>
+              <a
+                href={`https://www.youtube.com/watch?v=${vid.id.videoId}`}
+                target="_blank" rel="noreferrer"
+              >
+                <img src={vid.snippet.thumbnails.default.url} alt={vid.snippet.description}/>
+              </a>
             </section>
-          )
+          );
         })}
       </div>
     </section>
   );
 };
 
-export default Youtube;
+export default YouTube;
