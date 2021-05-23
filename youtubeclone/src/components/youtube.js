@@ -15,7 +15,6 @@ const YouTube = () => {
         `https://youtube.googleapis.com/youtube/v3/search?maxResults=9&part=snippet&q=${input}&key=${process.env.REACT_APP_API_KEY}`
       );
       setVidList(res.data.items);
-      debugger;
     } catch (error) {
       setVidList([]);
     }
@@ -39,7 +38,7 @@ const YouTube = () => {
   return (
     <section className="MainBody">
       <input
-        onChange={handleChange}
+        onChange={ handleChange }
         value={input}
         type="text"
         placeholder="Search..."
@@ -60,9 +59,6 @@ const YouTube = () => {
                   alt={vid.snippet.description}
                 />
               </Link>
-              {/* <a href={`https://www.youtube.com/watch?v=${vid.id.videoId}`} target="_blank" rel="noreferrer">
-                <img src={vid.snippet.thumbnails.high.url} alt={vid.snippet.description} />
-              </a> */}
               <p>{vid.snippet.title}</p>
             </section>
           );
