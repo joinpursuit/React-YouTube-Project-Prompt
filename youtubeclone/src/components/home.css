@@ -1,17 +1,20 @@
 .searchbutton {
   background-color: #f9b1ea;
   font-size: large;
-
   margin: 20px;
 }
+
 input {
   justify-content: center;
   width: auto;
   font-size: large;
 }
+
 .noresultbox {
   display: flex;
   justify-content: center;
+
   width: auto;
+
   background-color: rgb(194, 194, 194);
 }

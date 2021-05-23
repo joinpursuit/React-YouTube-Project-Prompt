@@ -1,6 +1,9 @@
 import { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
 import "./YouTube.css";
+
 const YouTube = () => {
   const [vidList, setVidList] = useState([]);
   const [input, setInput] = useState("");
@@ -43,9 +46,12 @@ const YouTube = () => {
         {vidList.map((vid) => {
           return (
             <section className="VideoList">
-              <a href={`https://www.youtube.com/watch?v=${vid.id.videoId}`} target="_blank" rel="noreferrer">
+              <Link to={`/video/${vid.id.videoId}`}>
                 <img src={vid.snippet.thumbnails.high.url} alt={vid.snippet.description} />
-              </a>
+              </Link>
+              {/* <a href={`https://www.youtube.com/watch?v=${vid.id.videoId}`} target="_blank" rel="noreferrer">
+                <img src={vid.snippet.thumbnails.high.url} alt={vid.snippet.description} />
+              </a> */}
               <p>{vid.snippet.title}</p>
             </section>
           );
