@@ -1,6 +1,10 @@
 import { useState } from "react";
 import axios from "axios";
 
+import "./YouTube.css";
+
+
+
 const YouTube = () => {
   const [vidList, setVidList] = useState([]);
   const [input, setInput] = useState("");
@@ -8,9 +12,12 @@ const YouTube = () => {
 
   const fetchVideos = async () => {
     try {
-      const res = await axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${input}&key=${process.env.REACT_APP_API_KEY}`);
-      debugger;
+
+      const res = await axios.get(`https://youtube.googleapis.com/youtube/v3/search?maxResults=9&part=snippet&q=${input}&key=${process.env.REACT_APP_API_KEY}`);
+
+      
       setVidList(res.data.items);
+      debugger;
     } catch (error) {
       setVidList([]);
     }
@@ -32,22 +39,23 @@ const YouTube = () => {
   } else text = null;
 
   return (
-    <section>
+    <section className="MainBody">
       <input onChange={handleChange} value={input} type="text" placeholder="Search..." />
 
       <button onClick={handleClick} className="searchbutton" type="submit">
         Search
       </button>
-      <div className="noresultbox">
-        {text}
 
+      <div className="noresultbox">{text}</div>
+      <div className="VideoContainer">
         {vidList.map((vid) => {
           return (
-            <section>
-              <p>{vid.snippet.title}</p>
+            <section className="VideoList">
               <a href={`https://www.youtube.com/watch?v=${vid.id.videoId}`} target="_blank" rel="noreferrer">
-                <img src={vid.snippet.thumbnails.default.url} alt={vid.snippet.description} />
+                <img src={vid.snippet.thumbnails.high.url} alt={vid.snippet.description} />
               </a>
+              <p>{vid.snippet.title}</p>
+
             </section>
           );
         })}
