@@ -38,7 +38,7 @@ const YouTube = () => {
   return (
     <section className="MainBody">
       <input
-        onChange={handleChange}
+        onChange={ handleChange }
         value={input}
         type="text"
         placeholder="Search..."
