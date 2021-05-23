@@ -1,15 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
-const Youtube = () => {
+
+const YouTube = () => {
   const [vidList, setVidList] = useState([]);
   const [input, setInput] = useState("");
+  const [searched, setSearched] = useState(false);
 
   const fetchVideos = async () => {
     try {
-      const res = await axios.get(
-        `https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${input}&key=${process.env.REACT_APP_API_KEY}`
-      );
-      debugger
+      const res = await axios.get(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&q=${input}&key=${process.env.REACT_APP_API_KEY}`);
+      debugger;
       setVidList(res.data.items);
     } catch (error) {
       setVidList([]);
@@ -21,10 +21,15 @@ const Youtube = () => {
   };
 
   const handleClick = () => {
-    // debugger;
     fetchVideos();
     setInput("");
+    setSearched(true);
   };
+
+  let text;
+  if (!searched) {
+    text = <p> Please Submit a Search Above </p>;
+  } else text = null;
 
   return (
     <section>
@@ -34,19 +39,21 @@ const Youtube = () => {
         Search
       </button>
       <div className="noresultbox">
-        <p>Please Submit a Search Above</p>
+        {text}
+
         {vidList.map((vid) => {
           return (
             <section>
-              <a href={`https://www.youtube.com/watch?v=${vid.id.videoId}`} target="_blank">
-            <p>{vid.snippet.title}</p> </a>
-            <img src={vid.snippet.thumbnails.default.url} />
+              <p>{vid.snippet.title}</p>
+              <a href={`https://www.youtube.com/watch?v=${vid.id.videoId}`} target="_blank" rel="noreferrer">
+                <img src={vid.snippet.thumbnails.default.url} alt={vid.snippet.description} />
+              </a>
             </section>
-          )
+          );
         })}
       </div>
     </section>
   );
 };
 
-export default Youtube;
+export default YouTube;
