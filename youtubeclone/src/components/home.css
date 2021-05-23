@@ -6,12 +6,15 @@
 }
 input {
   justify-content: center;
-  width: 400px;
+  width: auto;
   font-size: large;
 }
 .noresultbox {
   display: flex;
   justify-content: center;
-  width: 100%;
+
+  width: auto;
+
+
   background-color: rgb(194, 194, 194);
 }
