@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
-import "./navbar.css";
+import "./NavBar.css";
 
-const Navbar = () => {
+const NavBar = () => {
   return (
     <nav className="NavBarContainer">
       <img
@@ -16,4 +16,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavBar;
