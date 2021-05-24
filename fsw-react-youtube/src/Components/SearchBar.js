@@ -5,18 +5,15 @@ import axios from "axios"
 export default function SearchBar() {
   const [input, setInput] = useState("");
 
-  const inputChange = (e) => { setInput(e.target.value) 
-      };
+  const inputChange = (e) => { setInput(e.target.value) };
 
-  
-
-    const handleSubmit = async () => {
-        e.preventDefault()
-        console.log("handleSubmit")
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    console.log("handleSubmit")
     const { data } = await axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_API_KEY}`)
     console.log(data)
-    
-    };
+  
+  };
   return (
     <form onSubmit={handleSubmit} >
       <input
