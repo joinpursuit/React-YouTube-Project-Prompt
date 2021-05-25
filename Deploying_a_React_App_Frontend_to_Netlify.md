@@ -39,7 +39,7 @@ Follow the prompts in the terminal. This will take some time but by the end your
 
 Choose "Create & configure a new site". You can use your arrow keys to cycle through the options and press enter to make your selection. 
 
-When asked with directory type "build" (without the quotes). This will give a sample URL to check your site. When you're ready to deploy to production run: `netlify deploy —prod` 
+When asked with directory type `build`. This will give a sample URL to check your site. When you're ready to deploy to production run: `netlify deploy —prod` 
 
 Again type "build" when asked which directory. 
 
