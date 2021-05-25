@@ -9,8 +9,7 @@ function App() {
     <div className="App">
       <NavBar />
       <SearchBar />
-      {/* video-container */}
-        {/* videoCards */}
+      
       <main>
         <Switch>
           <Route exact path="/"><h1>Youtube App</h1></Route>
