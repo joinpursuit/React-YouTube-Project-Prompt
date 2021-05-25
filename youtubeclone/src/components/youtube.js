@@ -33,5 +33,27 @@ const YouTube = () => {
     text = <p> Please Submit a Search Above </p>;
   } else text = null;
 
-  return <section className="MainBody"></section>;
+  return (
+    <section className="MainBody">
+      <input onChange={handleChange} value={input} type="text" placeholder="Search..." />
+
+      <button onClick={handleClick} className="searchbutton" type="submit">
+        Search
+      </button>
+
+      <div className="noresultbox">{text}</div>
+      <div className="VideoContainer">
+        {vidList.map((vid) => {
+          return (
+            <section className="VideoList">
+              <Link to={`/video/${vid.id.videoId}`}>
+                <img src={vid.snippet.thumbnails.high.url} alt={vid.snippet.description} />
+              </Link>
+              <p>{vid.snippet.title}</p>
+            </section>
+          );
+        })}
+      </div>
+    </section>
+  );
 };
