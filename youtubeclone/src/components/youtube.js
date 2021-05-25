@@ -13,7 +13,6 @@ const YouTube = () => {
     try {
       const res = await axios.get(`https://youtube.googleapis.com/youtube/v3/search?maxResults=9&part=snippet&q=${input}&key=${process.env.REACT_APP_API_KEY}`);
       setVidList(res.data.items);
-      debugger;
     } catch (error) {
       setVidList([]);
     }
@@ -34,31 +33,5 @@ const YouTube = () => {
     text = <p> Please Submit a Search Above </p>;
   } else text = null;
 
-  return (
-    <section className="MainBody">
-      <input onChange={handleChange} value={input} type="text" placeholder="Search..." />
-
-      <button onClick={handleClick} className="searchbutton" type="submit">
-        Search
-      </button>
-      <div className="noresultbox">{text}</div>
-      <div className="VideoContainer">
-        {vidList.map((vid) => {
-          return (
-            <section className="VideoList">
-              <Link to={`/video/${vid.id.videoId}`}>
-                <img src={vid.snippet.thumbnails.high.url} alt={vid.snippet.description} />
-              </Link>
-              {/* <a href={`https://www.youtube.com/watch?v=${vid.id.videoId}`} target="_blank" rel="noreferrer">
-                <img src={vid.snippet.thumbnails.high.url} alt={vid.snippet.description} />
-              </a> */}
-              <p>{vid.snippet.title}</p>
-            </section>
-          );
-        })}
-      </div>
-    </section>
-  );
+  return <section className="MainBody"></section>;
 };
-
-export default YouTube;
