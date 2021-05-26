@@ -1,0 +1,14 @@
+.singleVid {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid #f9b1ea;
+  margin: 30px;
+  padding: 62px;
+  height: auto;
+  width: 700px;
+  justify-items: center;
+  margin-left: 30%;
+}
+.singleVid p {
+  font-weight: bold;
+}
