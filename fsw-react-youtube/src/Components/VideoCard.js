@@ -1,15 +1,10 @@
-import React from 'react'
-
+import React from "react";
+import YouTube from 'react-youtube'
 export default function VideoCard() {
-    
     return (
-        <div>
-            <h1>title of vid</h1>
-            <video src="">
-                
-            </video>
-            
-            
-        </div>
-    )
+        <>
+            <h1>woot</h1>
+            <YouTube videoId={'KQ6zr6kCPj8'}/>
+            </>
+  );
 }
