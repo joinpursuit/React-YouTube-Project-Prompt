@@ -3,18 +3,22 @@ import NavBar from './Components/NavBar';
 import SearchBar from './Components/SearchBar'
 import About from './Components/About'
 import { Route, Switch } from "react-router-dom";
+import VideoCard from './Components/VideoCard'
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      <SearchBar />
+      {/* <SearchBar /> */}
       
       <main>
         <Switch>
-          <Route exact path="/"><h1>Youtube App</h1></Route>
+          <Route exact path="/">
+            <h1>Youtube App</h1>
+            <SearchBar />
+          </Route>
           <Route path="/about" component={About} />
-          <Route></Route>
+          <Route path='/video:id' component={VideoCard}/>
         </Switch>
       </main>
     </div>

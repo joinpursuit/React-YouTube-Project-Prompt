@@ -1,7 +1,6 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import VideoCard from './VideoCard'
 import axios from "axios";
 
 export default function SearchBar() {
@@ -20,7 +19,6 @@ export default function SearchBar() {
 
     setVideo(data.items);
     setInput("");
-    console.log(vids)
   };
 
   return (
@@ -36,7 +34,7 @@ export default function SearchBar() {
       </form>
       <ul className="List">
         {vids.map((video) => (
-          <Route>
+          <>
             <Link className="Link" to={`/videos/${video.id.videoId}`}>
               <li key={video.id.videoId}>
                 <img
@@ -47,10 +45,9 @@ export default function SearchBar() {
                 <h3>{video.snippet.title}</h3>
               </li>
             </Link>
-          </Route>
+          </>
         ))}
       </ul>
-      <VideoCard />
     </>
   );
 }
