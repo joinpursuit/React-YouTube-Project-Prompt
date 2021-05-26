@@ -2,10 +2,12 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import VideoCard from './VideoCard.js'
 
 export default function SearchBar() {
   const [input, setInput] = useState("");
   const [vids, setVideo] = useState([]);
+  const [vidId, setVidId] = useState('')
 
   const inputChange = (e) => {
     setInput(e.target.value);
@@ -21,6 +23,11 @@ export default function SearchBar() {
     setInput("");
   };
 
+  const OnClick = (e) => {
+    e.preventDefault();
+    setVidId(e.target.value)
+  }
+
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -35,7 +42,7 @@ export default function SearchBar() {
       <ul className="List">
         {vids.map((video) => (
           <>
-            <Link className="Link" to={`/videos/${video.id.videoId}`}>
+            <Link className="Link" to={`/video/${video.id.videoId}`}>
               <li key={video.id.videoId}>
                 <img
                   alt="youtube vid"

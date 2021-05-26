@@ -1,16 +1,16 @@
-import './App.css';
-import NavBar from './Components/NavBar';
-import SearchBar from './Components/SearchBar'
-import About from './Components/About'
+import "./styles/App.css";
+import NavBar from "./Components/NavBar";
+import SearchBar from "./Components/SearchBar";
+import About from "./Components/About";
 import { Route, Switch } from "react-router-dom";
-import VideoCard from './Components/VideoCard'
+import VideoCard from "./Components/VideoCard";
+
 
 function App() {
   return (
     <div className="App">
       <NavBar />
-      {/* <SearchBar /> */}
-      
+
       <main>
         <Switch>
           <Route exact path="/">
@@ -18,7 +18,9 @@ function App() {
             <SearchBar />
           </Route>
           <Route path="/about" component={About} />
-          <Route path='/video:id' component={VideoCard}/>
+          <Route path="/video/:id" component={VideoCard} >
+            <VideoCard />
+          </Route>
         </Switch>
       </main>
     </div>
