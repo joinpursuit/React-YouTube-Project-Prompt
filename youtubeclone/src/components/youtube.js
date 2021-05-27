@@ -11,7 +11,9 @@ const YouTube = () => {
 
   const fetchVideos = async () => {
     try {
-      const res = await axios.get(`https://youtube.googleapis.com/youtube/v3/search?maxResults=9&part=snippet&q=${input}&key=${process.env.REACT_APP_API_KEY}`);
+      const res = await axios.get(
+        `https://youtube.googleapis.com/youtube/v3/search?maxResults=9&part=snippet&q=${input}&key=${process.env.REACT_APP_API_KEY}`
+      );
       setVidList(res.data.items);
     } catch (error) {
       setVidList([]);
@@ -22,7 +24,8 @@ const YouTube = () => {
     setInput(e.target.value);
   };
 
-  const handleClick = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
     fetchVideos();
     setInput("");
     setSearched(true);
@@ -35,11 +38,18 @@ const YouTube = () => {
 
   return (
     <section className="MainBody">
-      <input onChange={handleChange} value={input} type="text" placeholder="Search..." />
+      <form onSubmit={handleSubmit}>
+        <input
+          onChange={handleChange}
+          value={input}
+          type="text"
+          placeholder="Search..."
+        />
 
-      <button onClick={handleClick} className="searchbutton" type="submit">
-        Search
-      </button>
+        <button className="searchbutton" type="submit">
+          Search
+        </button>
+      </form>
 
       <div className="noresultbox">{text}</div>
       <div className="VideoContainer">
@@ -47,7 +57,10 @@ const YouTube = () => {
           return (
             <section className="VideoList">
               <Link to={`/video/${vid.id.videoId}`}>
-                <img src={vid.snippet.thumbnails.high.url} alt={vid.snippet.description} />
+                <img
+                  src={vid.snippet.thumbnails.high.url}
+                  alt={vid.snippet.description}
+                />
               </Link>
               <p>{vid.snippet.title}</p>
             </section>

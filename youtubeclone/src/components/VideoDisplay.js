@@ -19,9 +19,8 @@ const VideoDisplay = () => {
         setVideo({});
       }
     };
-    fetchVideo();
-    debugger;
-  });
+    fetchVideo()
+  },[]);
 
   return (
     <div className="singleVid">
