@@ -27,7 +27,17 @@ Once building its is done we can inspect the build folder.
 netlify login
 ```
 
-### Deploy
+
+
+### Continuous Deployment
+To deploy though the Netlify Website follow 
+* Our notes: https://github.com/joinpursuit/Netlify-CRA-Cont-Deploy-Guide
+
+* External Tutorial: [this tutorial](https://dev.to/easybuoy/deploying-react-app-from-github-to-netlify-3a9j)
+
+<hr />
+
+### Alternative Deploy step by steps
 
 While in your react app:
 
@@ -44,12 +54,6 @@ When asked with directory type `build`. This will give a sample URL to check you
 Again type "build" when asked which directory. 
 
 Congrats! Your site should now be deployed. 
-
-### Alternatives step by steps
-* To deploy though the Netlify Website follow [this tutorial](https://dev.to/easybuoy/deploying-react-app-from-github-to-netlify-3a9j)
-
-<hr />
-
 
 ### Set Up Redirects, So that Links to Specific Views like About or an Individual Video work
 
