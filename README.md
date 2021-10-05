@@ -1,134 +1,35 @@
-# React YouTube 
+# React YouTube
 
-Create a react app that lets you search for YouTube videos using the YouTube API, then choose a video from a list to watch.
+Create a React application that lets you search for YouTube videos using the YouTube API, then choose a video from a list to watch.
 
+## Project overview
 
-## Overview
-
-- Collaborate with at least one other person to build this app by using `git` and Github
-- Use `create-react-app` 
-- Use this guide to make sure you are making the most of [Working in Groups](./Working_In_Groups.md)
-- Use [this Trello Board Template](https://trello.com/b/tTFpk77m/fsw-personal-site-project) for your project (make a copy and customize) - Be sure that everyone on your team has access. 
-
-## UI
-
-Example Views
-
-### `/`
-
-![](./assets/home-1.png)
-
-<hr />
+For this project, you will work with at least one other person to recreate parts of the YouTube application.
 
 ![](./assets/home-2.png)
 
-### `/vidoes/:id`
+## Getting started
 
-![](./assets/video.png)
+After having been assigned a group, complete the following:
 
+- [ ] Read the rest of this document in full.
+- [ ] Create a new [Trello board](https://trello.com/) with your group. Include three columns: "To Do", "Doing", and "Done". Make sure everyone has access to the board.
+- [ ] Have each member of the group read the guide on [working in groups](./docs/working-in-groups.md). Afterwards, discuss what you read about as a group.
+- [ ] Read the project requirements in the [requirements](./docs/requirements.md) document. For each feature, build a new card in the Trello.
+- [ ] Once you have built the cards you believe you need, prioritize the cards so that the most important are towards the top.
+- [ ] Have one person create a repository on GitHub. Invite your group members to be able to work on the repository.
+- [ ] Submit your URL _now_ even though you will only have one commit.
 
-## User Stories, Acceptance Criteria and Code Quality Rubric
+One goal of this project is to practice working on projects together. Therefore, it is OK if the process above takes some time. It's part of what is required to complete this project!
 
-You must implement all of the user stories and acceptance criteria below. After those are completed, look at and implement as many of the stretch features as you want to.
+### Additional resources
 
-### User Stories
-1. I can navigate between the home page and the about page using a nav bar
-1. I can learn about the project and developers on the `about` page
-1. I can see a search bar on the `home` page that allows me to get a list of videos based on my search criteria
-1. I can click on a video thumbnail in order to get to a page that will let me play the video I am interested in
-1. I can share the link to the individual video and someone else will be able to see the same video
-1. I can visit this app on the Internet
+You will make use of the following packages:
 
-### Acceptance Criteria 
+- [`create-react-app`](https://www.npmjs.com/package/create-react-app)
+- [`react-router-dom`](https://www.npmjs.com/package/react-router-dom)
+- [`youtube-react`](https://www.npmjs.com/package/youtube-react)
 
-1. I can use the nav bar to navigate between the home page and about page
-1. I can see the `about` page that has 
-    - the nav bar
-    - a brief project description
-    - a short bio of each teammate
-    - links to each teammate's GitHub
-1. I can see the `home` page which has
-    - the nav bar 
-    - a search bar and submit button
-    - will show a list of videos after submitting a search
-        - The videos will have a `thumbnail` and `title` that the user can click on to see a new page (`/:id`, see below )
-    - will clear the search field after the submit button is pressed
-    - I can click on a thumbnail to take me to an individual video page
-1. I can see the individual view page of a video. The url will be `/videos/:id` where `id` is the video id from the Youtube API. 
-    - the nav bar
-    - the individual video view, which is accessible either by clicking a thumbnail from a search on the home page
-    - or by clicking on a link provided. I.e. the link `http://localhost:3000/videos/hY7m5jjJ9mM` will always show the same video, whether one gets there from clicking on the home page or on the link provided
-    - the video view will, at minimum, have a playable video from YouTube
+The following documents will help you to get started with YouTube:
 
-### Code Quality Rubric
-
-- Use JSX to create components
-- Talk with your instructor to commit to either using class based components to manage state **OR** using hooks. 
-- Use `create-react-app` to build a React app
-- Use `axios` to make an API call
-- Use `react-router-dom` to create different views
-- Use `youtube-react` to create a Youtube component for viewing videos from the Youtube API
-- Respond to user input to make an API call to the YouTube API
-- Use state to build a stateful React application
-- Use CSS to make a responsive and attractive app with decent UX/UI
-
-
-### Stretch Features
-- In Chrome Dev Tools - use the lighthouse tab and run it to see how well your app does with accessibility. Use the tool to go through your code and improve accessibility. This will involve things like properly setting up your forms, making sure there is enough color contrast between text and background and more
-
-- Add more inputs to change the search criteria
-    - Max number of results (numeric input use HTML5 input to control for min, max and integers
-    - Order of videos (date, rating, relevance, title) - maybe a drop down menu
-    - Safe search (dropdown) moderate, none, strict
-    - Set default relevanceLanguage and/or region code
-- Have UI/UX for `something went wrong` for returning a 400 status 
-- Adding a favicon (replace the react default one)
-- Faux comments section 
-    - Lives in state:
-    - User input for name to Create comment
-    - Add comment specific to video
-    - Delete comment
-    - Update comment
-- Figure out how to store in local storage  
-
-
-### Super Stretch Features
-
-Figure out how to use Firebase to store comments instead of local storage
-
-
-## Setting up the API Key
-
-In the root of your project (Same level as `package.json)
-
-- `touch .env`
-
-In the `.gitignore` file add a new line and add `.env` - we do not want this file to be uploaded to github. We want to keep our API key a secret. **[OR ELSE BAD THINGS CAN HAPPEN](https://www.theregister.com/2015/01/06/dev_blunder_shows_github_crawling_with_keyslurping_bots/)**
-
-The `.env` file is **NOT** JavaScript. Do not use spaces, quotes or semicolons
-
-The following is an example (this is not an authentic key, you will need to generate your own (see below))
-
-```
-REACT_APP_API_KEY=AIzaSyBLR3ihehfi3OXK-UYtucQQBkpnzaaL
-```
-
-
-When you need to use your api key you will do something like this
-
-```js
-axios.get(`https://youtube.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_API_KEY }`)
-```
-
-
-
-[Setting up up the YouTubeAPI](./Youtube_API_Key.md)
-
-While this will get your API set up and introduce you to the YouTube documentation, it will be your job to read and research the documentation in order to make the right API calls for this project. 
-
-## Deploy
-
-Deploy your app following [these instructions](./Deploying_a_React_App_Frontend_to_Netlify.md)
-
-
-Original Creator: Alejo Franco
+- [Getting and Implementing your YouTube API Key](./docs/youtube-api-key.md)
