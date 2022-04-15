@@ -7,7 +7,6 @@ If you have time, the following features will improve your application.
   - Order of videos (date, rating, relevance, title) - maybe a drop down menu
   - Safe search (dropdown) moderate, none, strict
   - Set default relevanceLanguage and/or region code
-- Have UI/UX for `something went wrong` for returning a 400 status
 - Adding a favicon (replace the react default one)
 - Faux comments section
   - Lives in state

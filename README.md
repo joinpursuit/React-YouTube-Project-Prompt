@@ -2,6 +2,11 @@
 
 Create a React application that lets you search for YouTube videos using the YouTube API, then choose a video from a list to watch.
 
+This project is designed to assess the React skills you have gained so far.
+There are 7 features that need to be written. Each completed function (passes all the tests) will be worth 1 point.
+A minium of 5 points must be attained in order to pass this assessment.
+You may receive partial credit (0.5 points) for features that are close but do not work exactly as specified.
+
 ## Project overview
 
 For this project, you will work with at least one other person to recreate parts of the YouTube application.

@@ -30,6 +30,7 @@ You must implement all of the user stories and acceptance criteria below. After 
 1. I can click on a video thumbnail in order to get to a page that will let me play the video I am interested in.
 1. I can share the link to the individual video and someone else will be able to see the same video.
 1. I can visit this app on the internet.
+1. Have UI/UX for `something went wrong` for returning a 400 status, using a [modal window](https://blog.hubspot.com/website/modal-web-design)
 
 ### Acceptance criteria
 
