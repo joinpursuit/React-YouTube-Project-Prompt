@@ -52,9 +52,15 @@ You must implement all of the user stories and acceptance criteria below. After 
      - After clicking on the title, the user should be brought to a new page for that specific video.
 
 1. I can see the individual "View" page of a video. The URL should be `/videos/:id` where `:id` is the video ID from the Youtube API. The page should have:
+
    - The nav bar.
    - The individual video view.
      - This video view should, at minimum, have a playable video from YouTube.
+
+1. I can see a modal that overlays the page when I get a 400 error
+
+- I should be able to click an x or outside the modal to exit the message
+- I should be able to try my search again, once the modal is closed
 
 ### Code Quality Rubric
 
