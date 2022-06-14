@@ -1,13 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+import React from "react";
+import useFetch from 'react-fetch-hook';
 
-function App() {
+export default function App() {
+
+  const { isLoading, error, data } = useFetch(`https://youtube.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_API_KEY}`);
+  if (isLoading) return "Loading..." ;
+  if (error) return "Error"
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          
         </p>
         <a
           className="App-link"
@@ -22,4 +27,3 @@ function App() {
   );
 }
 
-export default App;
