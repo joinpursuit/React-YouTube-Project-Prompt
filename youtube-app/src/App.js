@@ -1,14 +1,22 @@
 import './App.css';
-import React from "react";
-import useFetch from 'react-fetch-hook';
+import { React, useEffect } from "react";
+
+
 
 export default function App() {
+function getData () {
+  return fetch(`https://youtube.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_API_KEY}`)
+}
 
-  const { isLoading, error, data } = useFetch(`https://youtube.googleapis.com/youtube/v3/search?key=${process.env.REACT_APP_API_KEY}`);
-  if (isLoading) return "Loading..." ;
-  if (error) return "Error"
 
-  return (
+useEffect(() => {
+  getData()
+    .then(response => response.json())
+    .then(response => console.log(response))
+}, []) 
+
+  
+return (
     <div className="App">
       <header className="App-header">
         <p>
