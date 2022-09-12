@@ -28,6 +28,8 @@ After having been assigned a group, complete the following:
 
 One goal of this project is to practice working on projects together. Therefore, it is OK if the process above takes some time. It's part of what is required to complete this project!
 
+> **NOTE:** Some videos are forbidden to be viewed outside of the YouTube website (you will get an error of 403 forbidden). This is not something you must solve or figure out. Just be aware that some videos will not be available to be viewed with your app. It would be nice to have a message for the user, but not required for grading. 
+
 ### Additional resources
 
 You will make use of the following packages:
