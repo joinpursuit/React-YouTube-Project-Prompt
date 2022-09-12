@@ -36,7 +36,8 @@ You will make use of the following packages:
 
 - [`create-react-app`](https://www.npmjs.com/package/create-react-app)
 - [`react-router-dom`](https://www.npmjs.com/package/react-router-dom)
-- [`react-youtube`](https://www.npmjs.com/package/react-youtube))
+- [`react-youtube`](https://www.npmjs.com/package/react-youtube)
+- Class notes and lessons, including deployment
 
 The following documents will help you to get started with YouTube:
 
