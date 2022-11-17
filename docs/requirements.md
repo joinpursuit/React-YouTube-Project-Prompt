@@ -16,7 +16,7 @@ Your project should look something like the screenshots below. However, you are 
 
 ### Path: `/videos/:id`
 
-![](../assets/video.png)
+![](../assets/video_only.png)
 
 ## Features
 

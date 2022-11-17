@@ -16,6 +16,8 @@ If you have time, the following features will improve your application.
   - Update comment
 - Figure out how to store comments in local storage
 
+![Example comments section on show page](../assets/video.png)
+
 # Super stretch feature
 
 Figure out how to use [Firebase](https://firebase.google.com/) to store comments instead of local storage
